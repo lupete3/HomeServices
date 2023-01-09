@@ -125,26 +125,26 @@
                             @if(Auth::user()->utype === 'ADM')
                                 <li class="login-form"> <a href="#" title="Register">My Account (Admin)</a>
                                     <ul class="drop-down one-column hover-fade">
-                                        <li><a href="servicesbycategory/16.html">Dashboard</a></li>
-                                        <li><a href="{{route('logour')}}" onclick="event.prevenDefault(); document.getElementById('logout-form').submit()">Logout</a></li>
+                                        <li><a href="{{route('admin.dashboard')}}">Dashboard</a></li>
+                                        <li><a href="{{route('logout')}}" onclick="event.prevenDefault(); document.getElementById('logout-form').submit()">Logout</a></li>
                                     </ul>
                                 </li>
                             @elseif(Auth::user()->utype === 'SPV')
                                 <li class="login-form"> <a href="#" title="Register">My Account (S Provider)</a>
                                     <ul class="drop-down one-column hover-fade">
-                                        <li><a href="servicesbycategory/16.html">Dashboard</a></li>
-                                        <li><a href="{{route('logour')}}" onclick="event.prevenDefault(); document.getElementById('logout-form').submit()">Logout</a></li>
+                                        <li><a href="{{route('sprovider.dashboard')}}">Dashboard</a></li>
+                                        <li><a href="{{route('logout')}}" onclick="event.prevenDefault(); document.getElementById('logout-form').submit()">Logout</a></li>
                                     </ul>
                                 </li> 
                             @else
                                 <li class="login-form"> <a href="#" title="Register">My Account (Customer)</a>
                                     <ul class="drop-down one-column hover-fade">
-                                        <li><a href="servicesbycategory/16.html">Dashboard</a></li>
-                                        <li><a href="{{route('logour')}}" onclick="event.prevenDefault(); document.getElementById('logout-form').submit()">Logout</a></li>
+                                        <li><a href="{{route('customer.dashboard')}}">Dashboard</a></li>
+                                        <li><a href="{{route('logout')}}" onclick="event.prevenDefault(); document.getElementById('logout-form').submit()">Logout</a></li>
                                     </ul>
                                 </li>
                             @endif
-                            <form id="logout-form" method="post" action="{{route('logour')}}" >
+                            <form id="logout-form" method="post" action="{{route('logout')}}" >
                                 @csrf
                             </form>
 
