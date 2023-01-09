@@ -17,7 +17,7 @@ class AuthSprovider
      */
     public function handle(Request $request, Closure $next)
     {
-        if(Auth::use()->utype === 'SVP'){
+        if(Auth::user()->utype === 'SVP'){
             return $next($request);
         }else{
             session()->flush();
